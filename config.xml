@@ -26,5 +26,5 @@
 <allow-navigation href="https://*/*" />
 <allow-navigation href="data:*" />
     
-    
+    <plugin name="cordova-plugin-whitelist" source="npm" />
 </widget>
