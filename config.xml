@@ -9,5 +9,5 @@
         NRG MEDIOS
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="https://www.google.com.bo/" />
 </widget>
