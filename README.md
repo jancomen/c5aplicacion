@@ -1,2 +1,10 @@
-# c5aplicacion
-aplicación mobile
+# Gestures
+
+## Usage
+
+### PhoneGap CLI
+
+    $ phonegap serve
+
+
+
