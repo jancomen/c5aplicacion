@@ -9,17 +9,17 @@
         NRG MEDIOS
     </author>
     <content src="index.html" />
-    <access origin="https://www.google.com.bo/" />
+    <access origin="https://www.google.com/" />
     
     <!-- Allow links to example.com -->
-<allow-navigation href="http://google.com/" />
+<allow-navigation href="https://www.google.com/" />
 
 
 
 <!-- A wildcard can be used to whitelist the entire network,
      over HTTP and HTTPS.
      *NOT RECOMMENDED* -->
-<allow-navigation href="http://google.com.bo/" />
+<allow-navigation href="https://www.google.com/" />
 
 <!-- The above is equivalent to these three declarations -->
 <allow-navigation href="http://*/*" />
