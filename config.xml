@@ -9,7 +9,7 @@
         NRG MEDIOS
     </author>
     <content src="index.html" />
-    <access origin="https://www.google.com/" />
+    <access origin="*" />
     
     <!-- Allow links to example.com -->
 <allow-navigation href="https://www.google.com/" />
