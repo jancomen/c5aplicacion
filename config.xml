@@ -34,7 +34,7 @@
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	<plugin name="cordova-plugin-network-information" source="npm" />
 	<plugin name="cordova-plugin-media" source="npm" />
-<gap:plugin name="cordova-plugin-document-viewer" />
+<gap:plugin name="cordova-plugin-document-viewer" source="npm"/>
     
 		
 
