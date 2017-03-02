@@ -25,6 +25,16 @@
 <allow-navigation href="http://*/*" />
 <allow-navigation href="https://*/*" />
 <allow-navigation href="data:*" />
+	
+	<permission android:name="com.expocodetech.android.maps.permission.MAPS_RECEIVE"
+        			android:protectionLevel="signature"/>
+<uses-permission android:name="com.expocodetech.android.maps.permission.MAPS_RECEIVE"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     
     <plugin name="cordova-plugin-whitelist" source="npm" />
 	<plugin name="cordova-plugin-file" source="npm" />
@@ -34,7 +44,7 @@
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	<plugin name="cordova-plugin-network-information" source="npm" />
 	<plugin name="cordova-plugin-media" source="npm" />
-
+<plugin name="cordova plugin add plugin.google.maps --variable API_KEY_FOR_ANDROID=YOUR_API_KEY_IS_HERE" source="npm" />
 <gap:plugin name="cordova-plugin-document-viewer" source="npm"/>
     
 		
