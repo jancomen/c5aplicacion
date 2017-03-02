@@ -26,8 +26,7 @@
 <allow-navigation href="https://*/*" />
 <allow-navigation href="data:*" />
 	
-	<permission android:name="com.expocodetech.android.maps.permission.MAPS_RECEIVE"
-        			android:protectionLevel="signature"/>
+	<permission android:name="com.expocodetech.android.maps.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
 <uses-permission android:name="com.expocodetech.android.maps.permission.MAPS_RECEIVE"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
