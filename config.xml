@@ -44,7 +44,6 @@
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	<plugin name="cordova-plugin-network-information" source="npm" />
 	<plugin name="cordova-plugin-media" source="npm" />
-<plugin name="cordova plugin add plugin.google.maps --variable API_KEY_FOR_ANDROID=YOUR_API_KEY_IS_HERE" source="npm" />
 <gap:plugin name="cordova-plugin-document-viewer" source="npm"/>
     
 		
