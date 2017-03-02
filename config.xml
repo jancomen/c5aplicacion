@@ -34,7 +34,7 @@
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	<plugin name="cordova-plugin-network-information" source="npm" />
 	<plugin name="cordova-plugin-media" source="npm" />
-        <plugin name="cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID=AIzaSyDnd4-8VklW1NYQ5JrAKi1X2TDuXO7OQZA --variable API_KEY_FOR_IOS=AIzaSyDnd4-8VklW1NYQ5JrAKi1X2TDuXO7OQZA"  />
+        <plugin name="cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID=AIzaSyDnd4-8VklW1NYQ5JrAKi1X2TDuXO7OQZA --variable API_KEY_FOR_IOS=AIzaSyDnd4-8VklW1NYQ5JrAKi1X2TDuXO7OQZA" source="npm" />
 
 <gap:plugin name="cordova-plugin-document-viewer" source="npm"/>
     
