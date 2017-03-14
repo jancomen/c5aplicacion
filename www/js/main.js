@@ -1,123 +1,110 @@
-
-function main() {
-
-(function () {
-   'use strict';
-
-	// Hide .navbar first
-	$(".navbar").hide();
-	
-	// Fade in .navbar
-	$(function () {
-		$(window).scroll(function () {
-            // set distance user needs to scroll before we fadeIn navbar
-			if ($(this).scrollTop() > 200) {
-				$('.navbar').fadeIn();
-			} else {
-				$('.navbar').fadeOut();
-			}
-		});
+jQuery(function($) {'use strict',
 
 	
+	// all Parallax Section
+	$(window).load(function(){'use strict',
+		$("#services").parallax("50%", 0.3);
+		$("#clients").parallax("50%", 0.3);
 	});
 	
-	// Preloader */
-	  	$(window).load(function() {
-
-   	// will first fade out the loading animation 
-    	$("#status").fadeOut("slow"); 
-
-    	// will fade out the whole DIV that covers the website. 
-    	$("#preloader").delay(500).fadeOut("slow").remove();      
-
-  	}) 
-
-   // Page scroll
-  	$('a.page-scroll').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top - 40
-            }, 900);
-            return false;
-          }
-        }
-      });
-
-    // Show Menu on Book
-    $(window).bind('scroll', function() {
-        var navHeight = $(window).height() - 100;
-        if ($(window).scrollTop() > navHeight) {
-            $('.navbar-default').addClass('on');
-        } else {
-            $('.navbar-default').removeClass('on');
-        }
-    });
-
-    $('body').scrollspy({ 
-        target: '.navbar-default',
-        offset: 80
-    })
-
-  	$(document).ready(function() {
-  	    $("#testimonial").owlCarousel({
-        navigation : false, // Show next and prev buttons
-        slideSpeed : 300,
-        paginationSpeed : 400,
-        singleItem:true
-        });
-
-  	});
-
-  	// Portfolio Isotope Filter
-    $(window).load(function() {
-        var $container = $('.portfolio-items');
-        $container.isotope({
-            filter: '*',
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-        });
-        $('.cat a').click(function() {
-            $('.cat .active').removeClass('active');
-            $(this).addClass('active');
-            var selector = $(this).attr('data-filter');
-            $container.isotope({
-                filter: selector,
-                animationOptions: {
-                    duration: 750,
-                    easing: 'linear',
-                    queue: false
-                }
-            });
-            return false;
-        });
-
-    });
+	// portfolio filter
+	$(window).load(function(){'use strict',
+		$portfolio_selectors = $('.portfolio-filter >li>a');
+		if($portfolio_selectors!='undefined'){
+			$portfolio = $('.portfolio-items');
+			$portfolio.isotope({
+				itemSelector : '.col-sm-3',
+				layoutMode : 'fitRows'
+			});
+			
+			$portfolio_selectors.on('click', function(){
+				$portfolio_selectors.removeClass('active');
+				$(this).addClass('active');
+				var selector = $(this).attr('data-filter');
+				$portfolio.isotope({ filter: selector });
+				return false;
+			});
+		}
+	});
 	
-	
-
-  // jQuery Parallax
-  function initParallax() {
-    $('#intro').parallax("100%", 0.3);
-    $('#services').parallax("100%", 0.3);
-    $('#aboutimg').parallax("100%", 0.3);	
-    $('#testimonials').parallax("100%", 0.1);
-
-  }
-  initParallax();
-
-  	// Pretty Photo
-	$("a[rel^='prettyPhoto']").prettyPhoto({
-		social_tools: false
-	});	
-
-}());
+	//Pretty Photo
+	 $("a[data-gallery^='prettyPhoto']").prettyPhoto({
+	  social_tools: false
+	 });
 
 
-}
-main();
+	// Contact form validation
+	var form = $('.contact-form');
+	form.submit(function () {'use strict',
+		$this = $(this);
+		$.post($(this).attr('action'), function(data) {
+			$this.prev().text(data.message).fadeIn().delay(3000).fadeOut();
+		},'json');
+		return false;
+	});
+
+
+	// Navigation Scroll
+	$(window).scroll(function(event) {
+		Scroll();
+	});
+
+	$('.navbar-collapse ul li a').click(function() {  
+		$('html, body').animate({scrollTop: $(this.hash).offset().top - 79}, 1000);
+		return false;
+	});
+
+});
+
+// Preloder script
+jQuery(window).load(function(){'use strict';
+	$(".preloader").delay(1600).fadeOut("slow").remove();
+});
+
+//Preloder script
+jQuery(window).load(function(){'use strict';
+
+	// Slider Height
+	var slideHeight = $(window).height();
+	$('#home .carousel-inner .item, #home .video-container').css('height',slideHeight);
+
+	$(window).resize(function(){'use strict',
+		$('#home .carousel-inner .item, #home .video-container').css('height',slideHeight);
+	});
+
+});
+
+
+// User define function
+function Scroll() {
+	var contentTop      =   [];
+	var contentBottom   =   [];
+	var winTop      =   $(window).scrollTop();
+	var rangeTop    =   200;
+	var rangeBottom =   500;
+	$('.navbar-collapse').find('.scroll a').each(function(){
+		contentTop.push( $( $(this).attr('href') ).offset().top);
+		contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+	})
+	$.each( contentTop, function(i){
+		if ( winTop > contentTop[i] - rangeTop ){
+			$('.navbar-collapse li.scroll')
+			.removeClass('active')
+			.eq(i).addClass('active');			
+		}
+	})
+
+};
+
+
+	// Skill bar Function
+
+	jQuery(document).ready(function(){
+	jQuery('.skillbar').each(function(){
+		jQuery(this).find('.skillbar-bar').animate({
+			width:jQuery(this).attr('data-percent')
+		},6000);
+	});
+});
+
+
